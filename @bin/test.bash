@@ -5,8 +5,10 @@
 #
 # Example calls:
 #
-#     SUBMODULES_ENABLED=0 ./@bin/test.bash
-#     SUBMODULES_ENABLED=1 ./@bin/test.bash
+#     LFS_ENABLED=0 SUBMODULES_ENABLED=0 ./@bin/test.bash
+#     LFS_ENABLED=0 SUBMODULES_ENABLED=1 ./@bin/test.bash
+#     LFS_ENABLED=1 SUBMODULES_ENABLED=0 ./@bin/test.bash
+#     LFS_ENABLED=1 SUBMODULES_ENABLED=1 ./@bin/test.bash
 #
 ###
 
