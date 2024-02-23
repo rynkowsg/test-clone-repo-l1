@@ -1,0 +1,4 @@
+[submodule "repo-l2"]
+	path = refs/repo-l2
+	url = https://github.com/rynkowsg/test-clone-repo-l2.git
+	branch = master

@@ -5,7 +5,8 @@
 #
 # Example calls:
 #
-#     ./@bin/test.bash
+#     SUBMODULES_ENABLED=0 ./@bin/test.bash
+#     SUBMODULES_ENABLED=1 ./@bin/test.bash
 #
 ###
 
@@ -17,5 +18,12 @@ SCRIPT_DIR="$(cd "$(dirname "${SCRIPT_PATH}")" || exit 1; pwd -P)"
 REPO_DIR="$(cd "${SCRIPT_DIR}/.." || exit 1; pwd -P)"
 # detect REPO_DIR - end
 
+# SUBMODULES_ENABLED - submodules support, if not specified, set to false
+SUBMODULES_ENABLED=${SUBMODULES_ENABLED:-0}
+
 echo "Running: ${REPO_DIR}/test/test_content.bats..."
 "${REPO_DIR}/test/test_content.bats"
+
+if [ "${SUBMODULES_ENABLED}" = 1 ]; then
+  "${REPO_DIR}/refs/repo-l2/@bin/test.bash"
+fi
